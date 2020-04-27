@@ -1,0 +1,46 @@
+---
+kind: pipeline
+name: client_build
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: test
+    image: adoptopenjdk/openjdk13
+    commands:
+      - sleep 10
+      - ./gradlew client:check -s
+
+---
+kind: pipeline
+name: processor_build
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: test
+    image: adoptopenjdk/openjdk13
+    commands:
+      - sleep 10
+      - ./gradlew processor:check -s
+
+---
+kind: pipeline
+name: protobuf_build
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: test
+    image: adoptopenjdk/openjdk13
+    commands:
+      - sleep 10
+      - ./gradlew protobuf:check -s
+
+...

@@ -1,0 +1,16 @@
+service:
+  decaton:
+    processor:
+      sample-task:
+        topic: sample-event-v1
+        properties:
+          max.poll.records: 100
+          bootstrap.servers: localhost:9092
+          group.id: sample-processor
+          auto.offset.reset: earliest
+      heavy-task:
+        topic: sample-event-v1
+        properties:
+          max.poll.records: 1
+          bootstrap.servers: localhost:9092
+          group.id: heavy-processor

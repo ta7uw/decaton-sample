@@ -1,0 +1,8 @@
+syntax = "proto3";
+package sample.decaton.protobuf;
+
+message SampleTask {
+    string name = 1;
+    int32 age = 2;
+    string id = 3;
+}

@@ -1,0 +1,14 @@
+service:
+  kafka:
+    bootstrap-servers: localhost:9092
+  decaton:
+    sample-client:
+      topic: sample-event-v1
+      application-id: app-id
+      properties:
+        bootstrap.servers: ${service.kafka.bootstrap-servers}
+        enable.idempotence: true
+        acks: all
+        retries: 2147483647
+        max.in.flight.requests.per.connection: 5
+
